@@ -9,10 +9,13 @@
 # actor = Actor.new({ first_name: "Benedict", last_name: "Cumberbatch", known_for: "Sherlock" })
 # actor.save
 
-require "ffaker"
 
-first = FFaker::Name.first_name
-last = FFaker::Name.last_name
-known = FFaker::Movie.title
+# require "ffaker"
 
-actor = Actor.create({ first_name: first, last_name: last, known_for: known })
+# first = FFaker::Name.first_name
+# last = FFaker::Name.last_name
+# known = FFaker::Movie.title
+
+# actor = Actor.create({ first_name: first, last_name: last, known_for: known })
+
+movie = Movie.create(title: "A Silent Voice", year 2016, plot: "")
