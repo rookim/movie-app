@@ -5,4 +5,12 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   get "/one_actor" => "actors#display_single_actor"
+
+  get "/movies" => "movies#all_movies"
+
+  get "/a_silent_voice" => "movies#a_silent_voice"
+
+  get "/demon_slayer" => "movies#demon_slayer"
+
+  get "/your_name" => "movies#your_name"
 end
