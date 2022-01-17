@@ -1,5 +1,5 @@
 class ActorsController < ApplicationController
-  def display_single_actor
+  def one_actor
     id = params[:id]
     actor = Actor.find_by(id: id)
     render json: actor
