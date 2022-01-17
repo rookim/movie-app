@@ -4,13 +4,26 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  # uses query parameters to retrieve one actor by id
-  get "/home" => "actors#one_actor"
+  # retrieves all actors
+  get "/actors" => "actors#index"
 
-  # uses url segment parameters to retrieve one actor by id
-  get "/home/:id" => "actors#one_actor"
+  # retrieves one actor by id
+  get "/actors/:id" => "actors#show"
 
-  # uses body parameters to retrieve one actor by id
-  post "/home" => "actors#one_actor"
+  # uploads a new actor
+  post "/actors" => "actors#create"
+
+  # updates an actor's info
+  patch "/actors/:id" => "actors#update"
+
+  # deletes a specific actor
+  delete "/actors/:id" => "actors#destroy"
+
+
+  get "/movies" => "movies#index"
+  post "/movies" => "movies#create"
+  get "/movies/:id" => "movies#show"
+  patch "/movies/:id" => "movies#update"
+  delete "/movies/:id" => "movies#destroy"
 
 end
