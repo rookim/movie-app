@@ -1,0 +1,22 @@
+POST http://localhost:3000/actors
+Content-Type: application/json
+
+{
+  "first_name": "Yoo-jung",
+  "last_name": "Kim",
+  "known_for": "Love in the Moonlight"
+}
+
+###
+PATCH http://localhost:3000/actors/6
+Content-Type: application/json
+
+{
+  "first_name": "Ji-eun", 
+  "last_name": "Lee",
+  "known_for": "Dream High"
+}
+
+###
+
+DELETE http://localhost:3000/actors/2
