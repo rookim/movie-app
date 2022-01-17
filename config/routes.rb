@@ -10,4 +10,7 @@ Rails.application.routes.draw do
   # uses url segment parameters to retrieve one actor by id
   get "/home/:id" => "actors#one_actor"
 
+  # uses body parameters to retrieve one actor by id
+  post "/home" => "actors#one_actor"
+
 end
