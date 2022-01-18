@@ -1,21 +1,37 @@
 class MoviesController < ApplicationController
-  def all_movies
+  def index
     all = Movie.all
     render json: all
   end
 
-  def a_silent_voice
-    asv = Movie.find_by(title: "A Silent Voice")
-    render json: asv
+  def create
+    movie = Movie.create(
+      "title": params[:title],
+      "year": params[:year],
+      "plot": params[:plot]
+    )
+    render json: movie
   end
 
-  def demon_slayer
-    ds = Movie.find_by(title: "Demon Slayer: Mugen Train")
-    render json: ds
+  def show
+    id = params[:id]
+    render json: Movie.find(id)
   end
 
-  def your_name
-    yn = Movie.find_by(title: "Your Name")
-    render json: yn
+  def update
+    movie = Movie.find(params[:id])
+    movie.title = params[:title] || movie.title
+    movie.year = params[:year] || movie.year
+    movie.plot = params[:plot] || movie.plot
+    movie.save
+
+    render json: movie
+  end
+
+  def destroy
+    movie = Movie.find(params[:id])
+    movie.destroy
+
+    render json: {"message": "Data for #{movie.title} has been destroyed...}"}
   end
 end

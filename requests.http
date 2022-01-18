@@ -1,22 +1,26 @@
-POST http://localhost:3000/actors
+### 
+GET http://localhost:3000/movies
+
+###
+POST http://localhost:3000/movies
 Content-Type: application/json
 
 {
-  "first_name": "Yoo-jung",
-  "last_name": "Kim",
-  "known_for": "Love in the Moonlight"
+  "title": "My Neighbor Totoro",
+  "year": 1988,
+  "plot": "A little girl named Mei befriends a rather large spirit that resembles a tanuki, cat, and owl in one. Mei names it Totoro. However, despite many fruitless attempts, Mei is unable to show the rest of her family Totoro's tree."
 }
 
 ###
-PATCH http://localhost:3000/actors/6
+GET http://localhost:3000/movies/4
+
+###
+PATCH http://localhost:3000/movies/4
 Content-Type: application/json
 
 {
-  "first_name": "Ji-eun", 
-  "last_name": "Lee",
-  "known_for": "Dream High"
+  "plot": "A university professor Tatsuo Kusakabe moves into an old house with his two daughters Satsuki and Mei to be closer to the hospital where his wife Yasuko is recovering from a long-term illness. The house is inhabited by tiny creatures called susuwatari- small, dark, dust-like house spirits that reside in abandoned houses. Once Satsuki and Mei become comfortable in their new house, the soot spirits leave to find another empty house. One day, Mei discovers two small spirits who eventually lead her into the hollow of a large tree. There, she meets a large spirit that resembles a tanuki, cat, and owl rolled into one. Mei names it Totoro."
 }
 
 ###
-
-DELETE http://localhost:3000/actors/2
+DELETE http://localhost:3000/movies/1
