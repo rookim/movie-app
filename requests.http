@@ -1,26 +1,18 @@
-### 
-GET http://localhost:3000/movies
-
-###
-POST http://localhost:3000/movies
+POST http://localhost:3000/actors
 Content-Type: application/json
 
 {
-  "title": "My Neighbor Totoro",
-  "year": 1988,
-  "plot": "A little girl named Mei befriends a rather large spirit that resembles a tanuki, cat, and owl in one. Mei names it Totoro. However, despite many fruitless attempts, Mei is unable to show the rest of her family Totoro's tree."
+  "first_name": "Shin-hye",
+  "last_name": "Park",
+  "known_for": "You're Beautiful",
+  "gender": "female",
+  "age": 31
 }
 
 ###
-GET http://localhost:3000/movies/4
-
-###
-PATCH http://localhost:3000/movies/4
+PATCH http://localhost:3000/actors/11
 Content-Type: application/json
 
 {
-  "plot": "A university professor Tatsuo Kusakabe moves into an old house with his two daughters Satsuki and Mei to be closer to the hospital where his wife Yasuko is recovering from a long-term illness. The house is inhabited by tiny creatures called susuwatari- small, dark, dust-like house spirits that reside in abandoned houses. Once Satsuki and Mei become comfortable in their new house, the soot spirits leave to find another empty house. One day, Mei discovers two small spirits who eventually lead her into the hollow of a large tree. There, she meets a large spirit that resembles a tanuki, cat, and owl rolled into one. Mei names it Totoro."
+  "age": 31
 }
-
-###
-DELETE http://localhost:3000/movies/1
