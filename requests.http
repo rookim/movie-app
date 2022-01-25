@@ -1,12 +1,12 @@
-POST http://localhost:3000/movies
+POST http://localhost:3000/actors
 Content-Type: application/json
 
 {
-  "first_name": "Shin-hye",
-  "last_name": "Park",
-  "known_for": "You're Beautiful",
+  "first_name": "Scarlett",
+  "last_name": "Johansson",
+  "known_for": "Black Widow",
   "gender": "female",
-  "age": 31
+  "age": 37
 }
 
 ###
