@@ -21,8 +21,7 @@ class ActorsController < ApplicationController
   end
 
   def show
-    id = params[:id]
-    render json: Actor.find(id)
+    render json: Actor.find(params[:id])
   end
 
   def update

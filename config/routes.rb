@@ -7,11 +7,11 @@ Rails.application.routes.draw do
   # retrieves all actors
   get "/actors" => "actors#index"
 
-  # retrieves one actor by id
-  get "/actors/:id" => "actors#show"
-
   # uploads a new actor
   post "/actors" => "actors#create"
+
+  # retrieves one actor by id
+  get "/actors/:id" => "actors#show"
 
   # updates an actor's info
   patch "/actors/:id" => "actors#update"

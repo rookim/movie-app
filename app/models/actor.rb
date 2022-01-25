@@ -5,4 +5,9 @@ class Actor < ApplicationRecord
   validates :age, presence: true, numericality: { greater_than: 13 }
 
   belongs_to :movie
+
+  def movie_plot
+    movie = Movie.find(movie_id)
+    movie.plot
+  end
 end
