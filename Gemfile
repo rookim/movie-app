@@ -48,3 +48,4 @@ end
 
 gem 'ffaker'
 gem 'active_model_serializers'
+gem 'jwt'

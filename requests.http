@@ -1,3 +1,6 @@
+@url = http://localhost:3000
+@rotjwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDM0NzA1Mzd9.c_lAJkj3prhgZTsmbOwrDaYGJ-P9yqOAAgnhgH_lQeA
+
 POST http://localhost:3000/actors
 Content-Type: application/json
 
@@ -19,3 +22,23 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3000/actors/5
+
+### User create
+Post {{ url }}/users
+Content-Type: application/json
+
+{
+  "name": "Kristin",
+  "email": "kristin@test.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
+
+### Sessions create
+POST {{ url }}/sessions
+Content-Type: application/json
+
+{
+  "email": "@test.com",
+  "password": "password"
+}
