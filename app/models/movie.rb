@@ -6,4 +6,9 @@ class Movie < ApplicationRecord
   has_many :actors
   has_many :movie_genres
   has_many :genres, through: :movie_genres
+
+  # instance method. add self if you want to make method class-widegit sta
+  def genre_names
+    genres.map { |genre| genre["name"] }
+  end
 end
