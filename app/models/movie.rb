@@ -4,4 +4,6 @@ class Movie < ApplicationRecord
   validates :plot, length: {maximum: 1000, too_long: "only allows for a maximum of #{count} characters"}
 
   has_many :actors
+  has_many :movie_genres
+  has_many :genres, through: :movie_genres
 end

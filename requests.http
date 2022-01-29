@@ -1,5 +1,6 @@
-@url = http://localhost:3000
+@domain = http://localhost:3000
 @rotjwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDM0NzA1Mzd9.c_lAJkj3prhgZTsmbOwrDaYGJ-P9yqOAAgnhgH_lQeA
+@carolynjwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NDM1MDk5Njd9._HOIjV_VYemMp1dZr3KRKUe0GUG5FsXRpw0364oFj7I
 
 POST http://localhost:3000/actors
 Content-Type: application/json
@@ -15,16 +16,17 @@ Content-Type: application/json
 ###
 PATCH http://localhost:3000/movies/2
 Content-Type: application/json
+Authorization: Bearer {{ carolynjwt }}
 
 {
-  "plot": "High school student Shoya has every intention of killing himself, but changes his mind at the very last minute. A flashback reveals Shoya in 6th grade relentlessly bullying a deaf girl named Shoko. When word of the bullying reaches the principal, Shoya is singled out by everyone else as the only culprit. THe bullying originally targeted at Shoko is now directed at Shoya. Shoya becomes an outcast throughout middle and high school for his reputation as a bully and as a result, he is a depressed loner unable to look at others in the eyes."
+  "plot": "Fledgling demon slayers Tanjiro, Nezuko, Zenitsu, and Inosuke aboard a train to assist the Flame Pillar Kyoujurou Rengoku in his mission to hunt for a demon that has killed many passengers and demon slayers alike. Soon after boarding, all of them are enchanted and fall into a deep slumber."
 }
 
 ###
 GET http://localhost:3000/actors/5
 
 ### User create
-Post {{ url }}/users
+Post {{ domain }}/users
 Content-Type: application/json
 
 {
@@ -34,11 +36,15 @@ Content-Type: application/json
   "password_confirmation": "password"
 }
 
-### Sessions create
-POST {{ url }}/sessions
+### Session create
+POST {{ domain }}/sessions
 Content-Type: application/json
 
 {
-  "email": "@test.com",
+  "email": "carolyn@test.com",
   "password": "password"
 }
+
+### Movie index
+GET {{ domain }}/movies/5
+# Authorization: {{ carolynjwt }}
