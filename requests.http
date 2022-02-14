@@ -30,8 +30,8 @@ Post {{ domain }}/users
 Content-Type: application/json
 
 {
-  "name": "Kristin",
-  "email": "kristin@test.com",
+  "name": "Fido",
+  "email": "fido@test.com",
   "password": "password",
   "password_confirmation": "password"
 }
@@ -46,5 +46,13 @@ Content-Type: application/json
 }
 
 ### Movie index
-GET {{ domain }}/movies/5
-# Authorization: {{ carolynjwt }}
+GET {{ domain }}/movies
+
+### MoviesGenre create
+POST {{ domain }}/movie_genres
+Content-Type: application/json
+
+{
+  "movie_id": 1,
+  "genre_id": 1
+}

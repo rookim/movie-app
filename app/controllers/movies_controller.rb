@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  before_action :authenticate_admin, except: [:index, :show]
+  before_action :authenticate_admin, except: [:index, :show, :create, :update, :destroy]
   
   def index
     render json: Movie.all
@@ -43,6 +43,6 @@ class MoviesController < ApplicationController
     movie = Movie.find(params[:id])
     movie.destroy
 
-    render json: {"message": "Data for #{movie.title} has been destroyed...}"}
+    render json: {"message": "Data for #{movie.title} has been destroyed..."}
   end
 end
